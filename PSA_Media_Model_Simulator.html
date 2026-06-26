@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PSA Media Investment Model — Path to $584K</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --ink:#1B1B1B; --ink2:#535A5D; --ink3:#898686;
+  --paper:#FFFFFF; --cream:#F9F8F4; --mist:#E3EBF0;
+  --blue:#467C99; --blue-d:#37657F; --blue-soft:#EAF1F5;
+  --mint:#8FB9B2; --mint-soft:#E7F1EF; --mint-d:#2F7D72;
+  --good:#1E7A40; --good-soft:#E7F2EC; --bad:#D14224; --bad-soft:#FBE9E3; --warn:#B07D2E; --warn-soft:#F7EEDC;
+  --line:#E7E4DD; --line2:#EFEDE7;
+  --font:'Assistant',sans-serif; --ease:cubic-bezier(.4,0,.2,1);
+}
+html{scroll-behavior:smooth;font-size:16px}
+body{font-family:var(--font);background:var(--cream);color:var(--ink);min-height:100vh;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+#bg{position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.6}
+.mouse-glow{position:fixed;width:460px;height:460px;border-radius:50%;background:radial-gradient(circle,rgba(70,124,153,.09) 0%,transparent 65%);pointer-events:none;z-index:0;transform:translate(-50%,-50%);transition:left .14s ease,top .14s ease}
+.wrap{position:relative;z-index:1;max-width:1280px;margin:0 auto;padding:0 22px}
+nav{position:fixed;top:0;left:0;right:0;z-index:200;padding:0 1.6rem;height:58px;display:flex;align-items:center;justify-content:space-between;background:rgba(249,248,244,.86);backdrop-filter:blur(18px);border-bottom:1px solid var(--line)}
+.logo{display:flex;align-items:center;gap:9px;text-decoration:none}
+.logo .wm{font-weight:800;font-size:1.35rem;letter-spacing:.02em;color:var(--ink);text-transform:lowercase}
+.logo .sub{font-size:.72rem;color:var(--ink3);font-weight:500;border-left:1px solid var(--line);padding-left:9px}
+@media(max-width:600px){.logo .sub{display:none}}
+.nav-right{display:flex;align-items:center;gap:10px}
+.nav-pill{display:flex;align-items:center;gap:7px;padding:5px 12px;border-radius:99px;border:1px solid var(--line);background:var(--paper);font-size:.66rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--blue)}
+.nav-btn{padding:8px 14px;border-radius:99px;background:var(--ink);color:#fff;font-size:.74rem;font-weight:700;border:none;cursor:pointer;text-decoration:none;transition:all .2s var(--ease)}
+.nav-btn:hover{background:#000;transform:translateY(-1px)}
+.nav-ghost{padding:8px 12px;border-radius:99px;border:1px solid var(--line);color:var(--ink2);font-size:.74rem;font-weight:700;text-decoration:none}
+.nav-ghost:hover{border-color:var(--blue);color:var(--blue)}
+
+.hero{position:relative;z-index:1;padding:84px 1.5rem 18px;text-align:center;display:flex;flex-direction:column;align-items:center}
+.eyebrow{display:inline-flex;align-items:center;gap:9px;font-size:.7rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--blue);margin-bottom:12px;opacity:0;animation:fadeUp .6s .08s var(--ease) forwards}
+.eyebrow .dash{width:20px;height:1px;background:var(--blue)}
+.h1{font-size:clamp(1.7rem,3.2vw,2.4rem);font-weight:800;line-height:1.12;letter-spacing:-.02em;margin-bottom:10px;max-width:820px;opacity:0;animation:fadeUp .6s .2s var(--ease) forwards}
+.h1 .ac{color:var(--blue)}
+.sub{font-size:.95rem;color:var(--ink2);max-width:680px;line-height:1.55;opacity:0;animation:fadeUp .6s .3s var(--ease) forwards}
+@keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+
+.sec{position:relative;z-index:1;padding:24px 0}
+.card{background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:20px;box-shadow:0 4px 16px rgba(0,0,0,.04)}
+
+/* controls */
+.controls{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:16px;margin-bottom:8px}
+@media(max-width:900px){.controls{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:520px){.controls{grid-template-columns:1fr}}
+.ctrl .top{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:6px}
+.ctrl label{font-size:.78rem;font-weight:600;color:var(--ink2)}
+.ctrl .val{font-size:.92rem;font-weight:800;color:var(--blue)}
+input[type=range]{width:100%;-webkit-appearance:none;height:5px;border-radius:5px;background:var(--mist);outline:none}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:18px;height:18px;border-radius:50%;background:#fff;border:3px solid var(--blue);cursor:pointer;box-shadow:0 1px 5px rgba(70,124,153,.4);transition:transform .12s}
+input[type=range]::-webkit-slider-thumb:hover{transform:scale(1.15)}
+input[type=range]::-moz-range-thumb{width:16px;height:16px;border-radius:50%;background:#fff;border:3px solid var(--blue);cursor:pointer}
+
+/* model cards */
+.models{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:18px}
+@media(max-width:980px){.models{grid-template-columns:1fr}}
+.model{background:var(--paper);border:1px solid var(--line);border-radius:18px;overflow:hidden;box-shadow:0 6px 20px rgba(0,0,0,.04);display:flex;flex-direction:column}
+.model.rec{border:2px solid var(--blue);box-shadow:0 10px 30px rgba(70,124,153,.14)}
+.m-head{padding:16px 18px 14px;border-bottom:1px solid var(--line2)}
+.m-tag{font-size:.62rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;padding:3px 9px;border-radius:99px;display:inline-block;margin-bottom:8px}
+.t1{background:var(--blue-soft);color:var(--blue-d)}.t2{background:var(--mint-soft);color:var(--mint-d)}.t3{background:var(--bad-soft);color:var(--bad)}
+.m-name{font-size:1.0rem;font-weight:800;line-height:1.15}
+.m-name small{display:block;font-size:.72rem;font-weight:600;color:var(--ink3);margin-top:2px}
+.m-budget{font-size:2.0rem;font-weight:800;letter-spacing:-.02em;margin-top:12px;line-height:1}
+.model.rec .m-budget{color:var(--blue-d)}.model:not(.rec) .m-budget{color:var(--ink)}
+.m-meta{display:flex;gap:8px;flex-wrap:wrap;margin-top:9px}
+.chiplet{font-size:.66rem;font-weight:700;padding:4px 9px;border-radius:99px;background:var(--cream);border:1px solid var(--line);color:var(--ink2)}
+.chiplet.warnchip{background:var(--bad-soft);border-color:#F2D2C7;color:var(--bad)}
+.chiplet.okchip{background:var(--good-soft);border-color:#CFE6D8;color:var(--good)}
+.m-rows{padding:6px 18px 4px;flex:1}
+.row{display:grid;grid-template-columns:1fr 86px 54px;align-items:center;gap:8px;padding:7px 0;border-top:1px solid var(--line2);font-size:.82rem}
+.row:first-child{border-top:none}
+.row .nm{color:var(--ink)}
+.row.sub .nm{color:var(--ink3);font-size:.76rem;padding-left:14px}
+.row .amt{text-align:right;font-weight:700;font-variant-numeric:tabular-nums}
+.row .pc{text-align:right;font-size:.72rem;color:var(--ink3)}
+.row.tot{border-top:2px solid var(--line);font-weight:800;margin-top:2px}
+.m-note{padding:12px 18px 16px;font-size:.76rem;color:var(--ink2);line-height:1.5;border-top:1px solid var(--line2);background:var(--cream)}
+.m-note b{color:var(--blue-d)}
+
+.seclab{font-size:.78rem;font-weight:800;color:var(--blue);margin:26px 0 10px;display:flex;align-items:center;gap:8px}
+.seclab::before{content:'';width:16px;height:1px;background:var(--blue)}
+.cmp-row{display:grid;grid-template-columns:200px 1fr 150px;align-items:center;gap:12px;padding:8px 0;font-size:.84rem}
+@media(max-width:600px){.cmp-row{grid-template-columns:120px 1fr 92px}}
+.cmp-row .lab{font-weight:700}
+.cmp-row .lab small{display:block;font-weight:500;color:var(--ink3);font-size:.7rem}
+.bt{background:var(--cream);border:1px solid var(--line2);border-radius:7px;height:24px;overflow:hidden}
+.bf{height:100%;border-radius:7px;display:flex;align-items:center;justify-content:flex-end;padding-right:8px;color:#fff;font-size:.72rem;font-weight:700;transition:width .5s var(--ease)}
+.cmp-row .rt{text-align:right;font-weight:800;font-variant-numeric:tabular-nums}
+.cmp-row .rt small{display:block;font-weight:600;color:var(--ink3);font-size:.7rem}
+
+/* MoM table */
+.mom{width:100%;border-collapse:collapse;font-size:.82rem}
+.mom th{text-align:right;color:var(--ink3);font-size:.64rem;text-transform:uppercase;letter-spacing:.04em;font-weight:700;padding:8px 10px;border-bottom:1px solid var(--line)}
+.mom th:first-child{text-align:left}
+.mom td{padding:8px 10px;border-bottom:1px solid var(--line2);text-align:right;font-variant-numeric:tabular-nums}
+.mom td:first-child{text-align:left;font-weight:700}
+.mom tr:hover td{background:var(--cream)}
+.mom tr.tot td{border-top:2px solid var(--line);font-weight:800;background:var(--blue-soft)}
+.assum{font-size:.76rem;color:var(--ink2);line-height:1.55;background:var(--cream);border-left:3px solid var(--blue);border-radius:0 12px 12px 0;padding:13px 15px;margin-top:18px}
+.assum b{color:var(--blue-d)}
+footer{position:relative;z-index:1;border-top:1px solid var(--line);padding:28px 22px;text-align:center;color:var(--ink3);font-size:.74rem;line-height:1.7}
+</style>
+</head>
+<body>
+<!-- ===== LOGIN GATE ===== -->
+<div id="loginGate" style="position:fixed;inset:0;z-index:99999;background:var(--cream);display:flex;align-items:center;justify-content:center;padding:20px;font-family:var(--font)">
+  <div style="width:100%;max-width:360px;background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:32px 26px;box-shadow:0 24px 60px rgba(70,124,153,.14);text-align:center">
+    <div style="font-weight:800;font-size:2rem;letter-spacing:.02em;color:var(--ink);text-transform:lowercase">psa</div>
+    <div style="font-size:.7rem;color:var(--ink3);text-transform:uppercase;letter-spacing:.12em;margin:2px 0 20px">Media Investment Model</div>
+    <div style="font-size:1.05rem;font-weight:700;margin-bottom:4px">Sign in to continue</div>
+    <div style="font-size:.82rem;color:var(--ink2);margin-bottom:18px">Confidential</div>
+    <input id="lgUser" type="text" placeholder="Username" autocomplete="username" style="width:100%;border:1px solid var(--line);border-radius:11px;padding:12px 14px;font-size:.9rem;font-family:var(--font);margin-bottom:10px;outline:none;background:var(--cream)">
+    <input id="lgPass" type="password" placeholder="Password" autocomplete="current-password" style="width:100%;border:1px solid var(--line);border-radius:11px;padding:12px 14px;font-size:.9rem;font-family:var(--font);margin-bottom:6px;outline:none;background:var(--cream)">
+    <div id="lgErr" style="color:var(--bad);font-size:.78rem;min-height:16px;margin-bottom:8px"></div>
+    <button id="lgBtn" style="width:100%;background:var(--ink);color:#fff;border:none;border-radius:11px;padding:13px;font-size:.92rem;font-weight:700;font-family:var(--font);cursor:pointer">Sign in</button>
+    <div style="font-size:.66rem;color:var(--ink3);margin-top:13px">🔒 Credentials verified client-side via SHA-256 · no plaintext stored in source</div>
+  </div>
+</div>
+<script>
+/* Credentials are NOT stored here — only a salted PBKDF2-SHA256 (300k iters) one-way hash. */
+(function(){
+  var SALT='76baa573d3d614c07c63202f25a605ab',
+      HASH='7f9254da6200b820af40524570f8dfbd1a500ef60cfdc93850da2d72ec58b2a7',
+      ITER=300000, g=document.getElementById('loginGate');
+  if(sessionStorage.getItem('psa_auth')==='1'){g.style.display='none';return;}
+  function h2b(h){var a=new Uint8Array(h.length/2);for(var i=0;i<a.length;i++)a[i]=parseInt(h.substr(i*2,2),16);return a;}
+  function b2h(b){return Array.from(new Uint8Array(b)).map(function(x){return x.toString(16).padStart(2,'0');}).join('');}
+  async function check(u,p){
+    var enc=new TextEncoder();
+    var km=await crypto.subtle.importKey('raw',enc.encode(u+p),'PBKDF2',false,['deriveBits']);
+    var bits=await crypto.subtle.deriveBits({name:'PBKDF2',salt:h2b(SALT),iterations:ITER,hash:'SHA-256'},km,256);
+    return b2h(bits)===HASH;
+  }
+  async function go(){
+    var u=document.getElementById('lgUser').value.trim(),p=document.getElementById('lgPass').value,
+        b=document.getElementById('lgBtn'),e=document.getElementById('lgErr');
+    e.textContent=''; b.disabled=true; b.textContent='Checking…';
+    var ok=false; try{ok=await check(u,p);}catch(x){e.textContent='Secure verification unavailable — open over http(s).';}
+    b.disabled=false; b.textContent='Sign in';
+    if(ok){sessionStorage.setItem('psa_auth','1');g.style.display='none';}
+    else if(!e.textContent){e.textContent='Incorrect username or password.';}
+  }
+  document.getElementById('lgBtn').onclick=go;
+  ['lgUser','lgPass'].forEach(function(id){document.getElementById(id).addEventListener('keydown',function(ev){if(ev.key==='Enter')go();});});
+  setTimeout(function(){document.getElementById('lgUser').focus();},60);
+})();
+</script>
+<canvas id="bg"></canvas>
+<div class="mouse-glow" id="glow"></div>
+
+<nav>
+  <a class="logo" href="PSA_AI_Insights_Dashboard.html"><span class="wm">psa</span><span class="sub">Media Investment Model</span></a>
+  <div class="nav-right">
+    <a class="nav-ghost" href="PSA_Revenue_Simulator.html">Revenue Simulator</a>
+    <a class="nav-btn" href="PSA_AI_Insights_Dashboard.html">← Dashboard</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="eyebrow"><span class="dash"></span> PSA Skincare · Media + Affiliates + Influencers</div>
+  <h1 class="h1">Three media models to reach <span class="ac">$584K</span> net revenue by EOY</h1>
+  <p class="sub">Three lenses on the same goal. Models 1 &amp; 2 size the media budget to hit the target — a data-driven plan and the US industry benchmark. Model 3 is the reality check: at PSA's 1.5× acquisition ROAS, what revenue does the recommended budget actually produce?</p>
+</header>
+
+<section class="sec"><div class="wrap">
+  <div class="card">
+    <div class="controls" id="controls"></div>
+    <div style="font-size:.74rem;color:var(--ink3);margin-top:6px">Adjust the net-revenue target and each model's efficiency lever — every figure recomputes live.</div>
+  </div>
+
+  <div class="models" id="models"></div>
+
+  <div class="seclab">Revenue outcome by model — same goal, different efficiency</div>
+  <div class="card"><div id="compare"></div>
+    <div style="font-size:.76rem;color:var(--ink2);margin-top:10px" id="compareNote"></div>
+  </div>
+
+  <div class="seclab">Month-over-month ramp to the target (recommended model)</div>
+  <div class="card">
+    <table class="mom"><thead><tr><th>Month</th><th>Net revenue</th><th>MoM</th><th>Media budget (Model 1)</th></tr></thead><tbody id="momBody"></tbody></table>
+  </div>
+
+  <div class="assum">
+    <b>How to read this.</b> <b>Models 1 &amp; 2</b> size the media budget <b>top-down</b> to hit the revenue target at a given efficiency (MER = net revenue ÷ total media spend). <b>Model 3</b> works the other way: it fixes the recommended (Model 1) budget and applies PSA's <b>1.5× acquisition ROAS</b> to recompute the <b>realistic total Shopify revenue</b> — paid media + influencers + affiliates generate 1.5× their spend, and the rest is the organic/owned/direct base, split per the AOP (~48% paid acquisition / ~52% organic). Figures cover <b>paid media + influencers + affiliates</b>; the organic base, owned email/SMS and AI-search are the non-paid revenue. <b>Programmatic display (RTB House + Criteo) is excluded</b> — it's been stopped — and Meta is run <b>prospecting-led</b>. These are directional planning aids, not guarantees.
+  </div>
+</div></section>
+
+<footer>PSA Skincare · Media Investment Model · Confidential · Budgets are directional planning aids based on the stated efficiency assumptions, not guarantees.<br>🔒 Credentials verified client-side via SHA-256 · no plaintext stored in source.</footer>
+
+<script>
+const state={ net:584000, growth:10, mer:3.5, roas:1.5, m1pct:30, acqShare:48 };
+const $=v=>'$'+Math.round(v).toLocaleString();
+const $k=v=>'$'+(Math.round(v/100)/10).toFixed(1)+'K';
+
+const CTRLS=[
+ {id:'net',lab:'Net revenue target (EOY)',min:200000,max:1200000,step:8000,f:v=>'$'+(v/1000).toFixed(0)+'K'},
+ {id:'m1pct',lab:'Model 1 — media % of net',min:20,max:45,step:1,f:v=>v+'%'},
+ {id:'mer',lab:'Model 2 — US benchmark MER',min:2.5,max:5,step:0.1,f:v=>v.toFixed(1)+'×'},
+ {id:'roas',lab:'Model 3 — acquisition ROAS',min:1.0,max:4,step:0.1,f:v=>v.toFixed(1)+'×'},
+ {id:'acqShare',lab:'Model 3 — paid-acquisition share',min:35,max:65,step:1,f:v=>v+'%'},
+];
+const cc=document.getElementById('controls');
+CTRLS.forEach(c=>{const d=document.createElement('div');d.className='ctrl';
+  d.innerHTML=`<div class="top"><label>${c.lab}</label><span class="val" id="cv_${c.id}"></span></div>
+   <input type="range" id="ci_${c.id}" min="${c.min}" max="${c.max}" step="${c.step}" value="${state[c.id]}">`;
+  cc.appendChild(d);
+  d.querySelector('input').addEventListener('input',e=>{state[c.id]=parseFloat(e.target.value);render();});
+});
+
+/* ---- model builders ---- */
+function meta(b,prosp){return [
+  ['Meta',b,null,false],
+  ['Prospecting ('+Math.round(prosp*100)+'%)',b*prosp,null,true],
+  ['Retargeting ('+Math.round((1-prosp)*100)+'%)',b*(1-prosp),null,true],
+];}
+function build(){
+  const net=state.net;
+  // Model 1 — Data-driven (My Model)
+  const p1=state.m1pct/100, B1=net*p1;
+  const m1={budget:B1,pctNet:p1,mer:1/p1,rec:true,
+    rows:[
+      ...meta(B1*0.70,0.80),
+      ['Google PMax (pure prospecting)',B1*0.10,0.10,false],
+      ['Influencers & Affiliates',B1*0.20,0.20,false],
+    ],
+    chips:[['okchip',(1/p1).toFixed(2)+'× MER'],['',Math.round(p1*100)+'% of net'],['','70% Meta · 10% PMax · 20% Inf/Aff']],
+    note:'<b>Recommended.</b> Prospecting-led (Meta 80% prospecting + PMax pure prospecting) with a fixed 20% to influencers &amp; affiliates. Implies a blended MER of <b>'+(1/p1).toFixed(2)+'×</b>.'};
+  // Model 2 — US benchmark (MER)
+  const p2=1/state.mer, B2=net*p2;
+  const m2={budget:B2,pctNet:p2,mer:state.mer,rec:false,
+    rows:[
+      ...meta(B2*0.50,0.65),
+      ['Google (Search + PMax)',B2*0.25,0.25,false],
+      ['TikTok / other paid social',B2*0.10,0.10,false],
+      ['Influencers & Affiliates',B2*0.15,0.15,false],
+    ],
+    chips:[['okchip',state.mer.toFixed(1)+'× MER'],['',(p2*100).toFixed(1)+'% of net'],['','more diversified mix']],
+    note:'US benchmark for scaling premium-skincare DTC: a <b>more diversified, less Meta-concentrated</b> mix at a blended <b>MER '+state.mer.toFixed(1)+'×</b> → <b>'+(p2*100).toFixed(1)+'%</b> of net.'};
+  // Model 3 — PSA benchmark: 1.5× ACQUISITION ROAS. Anchor on the recommended (Model 1)
+  // budget, recompute the realistic TOTAL store revenue using the AOP ~48% paid / 52% organic split.
+  const B3=net*p1;                       // media+inf+aff budget = Model 1 (recommended) budget
+  const acq=state.roas*B3;               // paid-acquisition revenue at the acquisition ROAS
+  const a=state.acqShare/100;            // paid acquisition = a% of total (AOP ~48%)
+  const total3=acq/a, base3=total3-acq, gap3=total3-net;
+  const mMeta=B3*0.70, mG=B3*0.15, mIA=B3*0.15;
+  const m3={revenueModel:true,budget:B3,total:total3,acq:acq,base:base3,gap:gap3,roas:state.roas,rec:false,
+    rows:[
+      ['Paid acquisition (media + inf + aff) @'+state.roas.toFixed(1)+'×',acq,a,false],
+      ['Organic / owned / direct base',base3,1-a,false],
+    ],
+    chips:[['warnchip',state.roas.toFixed(1)+'× acq ROAS'],['','budget '+$k(B3)],[gap3<0?'warnchip':'okchip',(gap3>=0?'+':'−')+$k(Math.abs(gap3))+' vs target']],
+    note:'Anchored on the recommended <b>'+$(B3)+'</b> media budget (= Model 1). At PSA\'s <b>'+state.roas.toFixed(1)+'× acquisition ROAS</b> (within the AOP\'s 0.6–2.4× range), media+inf+aff generate <b>'+$(acq)+'</b>; with the organic/owned/direct base (~'+(100-state.acqShare)+'% of revenue, per AOP) the realistic total lands at <b>'+$(total3)+'</b> — '+(gap3<0?'about <b>'+$(-gap3)+'</b> short of':'<b>'+$(gap3)+'</b> above')+' the '+$(net)+' target.<br><span style="color:var(--ink3)">Budget split: Meta '+$(mMeta)+' (70%) · Google '+$(mG)+' (15%) · Inf/Aff '+$(mIA)+' (15%).</span>'};
+  return [
+    {tag:'t1',tagx:'Model 1 · Data-Driven',name:'My Model',sub:'media = '+state.m1pct+'% of net revenue', ...m1},
+    {tag:'t2',tagx:'Model 2 · US Benchmark',name:'Industry MER',sub:'US brands like psaskincare.shop', ...m2},
+    {tag:'t3',tagx:'Model 3 · PSA Benchmark',name:state.roas.toFixed(1)+'× Acquisition ROAS',sub:'realistic revenue at the recommended budget', ...m3},
+  ];
+}
+
+function rowHtml(r,budget){
+  const [nm,amt,pcOfBudget,isSub]=r;
+  const pc=pcOfBudget!=null?(pcOfBudget*100).toFixed(0)+'%':'';
+  const tot=(nm==='Meta')?'':'';
+  return `<div class="row ${isSub?'sub':''}"><div class="nm">${nm}</div><div class="amt">${$(amt)}</div><div class="pc">${pc}</div></div>`;
+}
+function render(){
+  CTRLS.forEach(c=>document.getElementById('cv_'+c.id).textContent=c.f(state[c.id]));
+  const models=build();
+  document.getElementById('models').innerHTML=models.map(m=>{
+    const big=m.revenueModel?m.total:m.budget;
+    const bigLab=m.revenueModel?'Realistic total revenue':'Total media budget';
+    const bigStyle=m.revenueModel?(m.gap<0?'color:var(--bad)':'color:var(--good)'):'';
+    return `
+    <div class="model ${m.rec?'rec':''}">
+      <div class="m-head">
+        <span class="m-tag ${m.tag}">${m.tagx}</span>
+        <div class="m-name">${m.name}<small>${m.sub}</small></div>
+        <div class="m-budget" style="${bigStyle}">${$(big)}</div>
+        <div class="m-meta">${m.chips.map(c=>`<span class="chiplet ${c[0]}">${c[1]}</span>`).join('')}</div>
+      </div>
+      <div class="m-rows">
+        ${m.rows.map(r=>rowHtml(r,big)).join('')}
+        <div class="row tot"><div class="nm">${bigLab}</div><div class="amt">${$(big)}</div><div class="pc">100%</div></div>
+      </div>
+      <div class="m-note">${m.note}</div>
+    </div>`;}).join('');
+
+  // comparison — revenue OUTCOME by model (Models 1&2 hit the target; Model 3 is recomputed)
+  const outcomes=models.map(m=>m.revenueModel?m.total:state.net);
+  const maxO=Math.max(...outcomes,state.net), cols=['var(--blue)','var(--mint-d)','var(--bad)'];
+  document.getElementById('compare').innerHTML=models.map((m,i)=>{
+    const out=outcomes[i], eff=m.revenueModel?(m.roas.toFixed(1)+'× acq ROAS'):(m.mer.toFixed(2)+'× MER');
+    const right=m.revenueModel?((m.gap>=0?'+':'−')+$(Math.abs(m.gap))):'on target';
+    return `<div class="cmp-row"><div class="lab">${m.name}<small>budget ${$(m.budget)}</small></div>
+      <div class="bt"><div class="bf" style="width:${Math.max(12,out/maxO*100)}%;background:${cols[i]}">${$(out)}</div></div>
+      <div class="rt" style="${m.revenueModel&&m.gap<0?'color:var(--bad)':''}">${right}<small>${eff}</small></div></div>`;}).join('');
+  const m3=models[2];
+  document.getElementById('compareNote').innerHTML=`Models 1 &amp; 2 size the budget to <b>hit ${$(state.net)}</b> efficiently (a tight ${$(models[1].budget)}–${$(models[0].budget)} band). Model 3 shows that at PSA's <b>${state.roas.toFixed(1)}× acquisition ROAS</b>, the same <b>${$(m3.budget)}</b> budget realistically reaches only <b>${$(m3.total)}</b> — about <b>${$(-m3.gap)}</b> (${Math.abs(m3.gap/state.net*100).toFixed(0)}%) short. Closing the gap needs higher acquisition efficiency or a larger organic/owned base.`;
+
+  // MoM ramp (recommended model %)
+  const r=1+state.growth/100; let denom=0; for(let i=0;i<12;i++)denom+=Math.pow(r,i);
+  const a=state.net/denom, MN=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+  let body='',prev=0,sumRev=0,sumBud=0;
+  for(let i=0;i<12;i++){const rev=a*Math.pow(r,i),bud=rev*(state.m1pct/100);sumRev+=rev;sumBud+=bud;
+    const mom=i===0?'—':'+'+state.growth+'%';
+    body+=`<tr><td>${MN[i]}</td><td>${$(rev)}</td><td style="color:var(--good)">${mom}</td><td>${$(bud)}</td></tr>`;}
+  body+=`<tr class="tot"><td>Year total</td><td>${$(sumRev)}</td><td></td><td>${$(sumBud)}</td></tr>`;
+  document.getElementById('momBody').innerHTML=body;
+}
+render();
+
+/* canvas — soft drifting droplets */
+(function(){const cv=document.getElementById('bg'),ctx=cv.getContext('2d');let W,H,dots=[],mx=null,my=null;
+  const N=Math.min(42,Math.floor(window.innerWidth/32));
+  function rs(){W=cv.width=window.innerWidth;H=cv.height=window.innerHeight;}
+  function mk(){return{x:Math.random()*W,y:Math.random()*H,vx:(Math.random()-.5)*.2,vy:(Math.random()-.5)*.2,r:Math.random()*16+5,blue:Math.random()<.6};}
+  function init(){rs();dots=[];for(let i=0;i<N;i++)dots.push(mk());}
+  function draw(){ctx.clearRect(0,0,W,H);
+    dots.forEach(n=>{n.x+=n.vx;n.y+=n.vy;if(n.x<-30)n.x=W+30;if(n.x>W+30)n.x=-30;if(n.y<-30)n.y=H+30;if(n.y>H+30)n.y=-30;
+      if(mx!==null){const dx=n.x-mx,dy=n.y-my,d=Math.hypot(dx,dy);if(d<140){n.x+=dx/d*.5;n.y+=dy/d*.5;}}
+      const g=ctx.createRadialGradient(n.x,n.y,0,n.x,n.y,n.r);const c=n.blue?'70,124,153':'143,185,178';
+      g.addColorStop(0,'rgba('+c+',0.12)');g.addColorStop(.7,'rgba('+c+',0.05)');g.addColorStop(1,'rgba('+c+',0)');
+      ctx.beginPath();ctx.arc(n.x,n.y,n.r,0,7);ctx.fillStyle=g;ctx.fill();});
+    requestAnimationFrame(draw);}
+  window.addEventListener('resize',init);
+  window.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;const gl=document.getElementById('glow');gl.style.left=e.clientX+'px';gl.style.top=e.clientY+'px';});
+  init();draw();
+})();
+</script>
+</body>
+</html>
